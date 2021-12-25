@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/Supernova/static/css/main.4507775c.chunk.css",
+    "main.js": "/Supernova/static/js/main.8d18a22b.chunk.js",
+    "main.js.map": "/Supernova/static/js/main.8d18a22b.chunk.js.map",
+    "runtime-main.js": "/Supernova/static/js/runtime-main.cf0d5dac.js",
+    "runtime-main.js.map": "/Supernova/static/js/runtime-main.cf0d5dac.js.map",
+    "static/js/2.8e35662b.chunk.js": "/Supernova/static/js/2.8e35662b.chunk.js",
+    "static/js/2.8e35662b.chunk.js.map": "/Supernova/static/js/2.8e35662b.chunk.js.map",
+    "static/js/3.064bdb2f.chunk.js": "/Supernova/static/js/3.064bdb2f.chunk.js",
+    "static/js/3.064bdb2f.chunk.js.map": "/Supernova/static/js/3.064bdb2f.chunk.js.map",
+    "index.html": "/Supernova/index.html",
+    "static/css/main.4507775c.chunk.css.map": "/Supernova/static/css/main.4507775c.chunk.css.map",
+    "static/js/2.8e35662b.chunk.js.LICENSE.txt": "/Supernova/static/js/2.8e35662b.chunk.js.LICENSE.txt",
+    "static/media/1.d013195d.png": "/Supernova/static/media/1.d013195d.png",
+    "static/media/experience1.5c7da335.jpeg": "/Supernova/static/media/experience1.5c7da335.jpeg",
+    "static/media/experience2.d7f03bf7.jpeg": "/Supernova/static/media/experience2.d7f03bf7.jpeg",
+    "static/media/phones.a9449119.png": "/Supernova/static/media/phones.a9449119.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.cf0d5dac.js",
+    "static/js/2.8e35662b.chunk.js",
+    "static/css/main.4507775c.chunk.css",
+    "static/js/main.8d18a22b.chunk.js"
+  ]
+}
