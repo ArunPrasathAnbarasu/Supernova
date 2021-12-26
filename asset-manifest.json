@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Supernova/static/css/main.4507775c.chunk.css",
-    "main.js": "/Supernova/static/js/main.21d9f41d.chunk.js",
-    "main.js.map": "/Supernova/static/js/main.21d9f41d.chunk.js.map",
+    "main.js": "/Supernova/static/js/main.a72f0f12.chunk.js",
+    "main.js.map": "/Supernova/static/js/main.a72f0f12.chunk.js.map",
     "runtime-main.js": "/Supernova/static/js/runtime-main.cf0d5dac.js",
     "runtime-main.js.map": "/Supernova/static/js/runtime-main.cf0d5dac.js.map",
     "static/js/2.8e35662b.chunk.js": "/Supernova/static/js/2.8e35662b.chunk.js",
@@ -21,6 +21,6 @@
     "static/js/runtime-main.cf0d5dac.js",
     "static/js/2.8e35662b.chunk.js",
     "static/css/main.4507775c.chunk.css",
-    "static/js/main.21d9f41d.chunk.js"
+    "static/js/main.a72f0f12.chunk.js"
   ]
 }
