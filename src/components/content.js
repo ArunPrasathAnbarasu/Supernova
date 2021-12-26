@@ -241,7 +241,7 @@ function Content() {
                                 </div>
                                 <div class="row justify-content-start">
                                     <div class="buttonIn">
-                                        <input type="number" id="referralForm" class="form-control" placeholder="9876543210"></input>
+                                        <input type="number" id="referralForm" class="form-control" placeholder="9994708434"></input>
                                             <button id="submitRefer" class="btn btn-black">Send</button>
                                     </div>
                                 </div>
