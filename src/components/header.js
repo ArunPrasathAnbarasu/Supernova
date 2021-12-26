@@ -30,7 +30,6 @@ class Header extends React.Component {
                             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                                 SuperNova
                             </Typography>
-                            <Button color="inherit">Professionals</Button>
                             <Button color="inherit">Login</Button>
                             <Button color="inherit">Signup</Button>
                         </Toolbar>
