@@ -314,8 +314,8 @@ function Content() {
                                 <ul class="footer-links">
                                     <li>Lorem Ipsum. Proin gravida
                                         nibh vel velit auctor aliquet. cheyyar-604407.</li>
-                                    <li><b>Phone: </b><a href="tel:9876543210">9994708434</a></li>
-                                    <li><b>Email: </b><a href="mailto:support@urbanclap.com">support@arun.com</a></li>
+                                    <li><b>Phone: </b><a href="tel:9994708434">9994708434</a></li>
+                                    <li><b>Email: </b><a href="mailto:support@arun.com">support@arun.com</a></li>
                                 </ul>
                             </div>
                         </div>
