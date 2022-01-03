@@ -4,16 +4,29 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import AuthDrawer from './AuthDrawer/authDrawer';
 
 const Header = () => {
     // State which manages auth drawer
     const [openAuthDrawer, setOpenAuthDrawer] = useState(false);
 
+    // State which manages authentication
+    const [isAuthenticatedUser, setIsAuthenticatedUser] = useState(false);
+
+    useEffect(() => {
+        setIsAuthenticatedUser(sessionStorage.getItem("isAuthenticated"));
+    }, [openAuthDrawer])
+
     // Handler which opens auth drawer
     const loginOrSignupClickHandler = () => {
         setOpenAuthDrawer(true);
+    }
+
+    // Logout handler
+    const logoutHandler = () => {
+        sessionStorage.clear();
+        setIsAuthenticatedUser(false);
     }
 
     // Handler which closes auth drawer
@@ -37,8 +50,11 @@ const Header = () => {
                         </IconButton>
                         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                             SuperNova
-                            </Typography>
-                        <Button color="inherit" onClick={loginOrSignupClickHandler}>Login/Signup</Button>
+                        </Typography>
+                        {isAuthenticatedUser ?
+                            <>Hi User! <Button color="inherit" onClick={logoutHandler}>Logout</Button></> :
+                            <Button color="inherit" onClick={loginOrSignupClickHandler}>Login/Signup</Button>
+                        }
                     </Toolbar>
                 </AppBar>
             </Box>

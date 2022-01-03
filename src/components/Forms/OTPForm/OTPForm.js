@@ -6,28 +6,40 @@ import classes from "./otpform.module.css";
 
 const OTPForm = ({ phoneNumber, setShowOtpForm, closeAuthDrawer }) => {
 	// Manages OTP entered by the user
-	const [OTP, setOTP] = useState("");
+	const [enteredOTP, setEnteredOTP] = useState("");
+
+	// State which validates OTP
+	const [isInValidOTP, setIsInValidOTP] = useState(false);
 
 	// State which disables/enables Login button
 	const [disableButton, setDisableButton] = useState(true);
 
 	useEffect(() => {
-		if (OTP.length === 4) {
+		if (enteredOTP.length === 4) {
 			setDisableButton(false);
 		} else {
 			setDisableButton(true);
 		}
-	}, [OTP])
+	}, [enteredOTP])
 
 	// Submit form handler
 	const submitFormHandler = () => {
-		closeAuthDrawer(true);
+		let OTP = sessionStorage.getItem("OTP");
+
+		if (OTP === enteredOTP) {
+			sessionStorage.setItem("isAuthenticated", true);
+			closeAuthDrawer(true);
+		} else {
+			setIsInValidOTP(true);
+		}
 	}
 
+	// Handles edit phone number form
 	const onBackArrowOrEditClickHandler = () => {
 		setShowOtpForm(false);
 	}
 
+	// Handles resend OTP
 	const handleResendOtpHandler = () => {
 		console.log('Resend OTP...')
 	}
@@ -52,7 +64,10 @@ const OTPForm = ({ phoneNumber, setShowOtpForm, closeAuthDrawer }) => {
 				<p>on {phoneNumber} <span className={classes["edit-link"]} onClick={onBackArrowOrEditClickHandler}>Edit</span></p>
 			</div>
 			<div className={classes.otp}>
-				<OTPInput value={OTP} onChange={setOTP} autoFocus OTPLength={4} otpType="number" disabled={false} />
+				<OTPInput value={enteredOTP} onChange={setEnteredOTP} autoFocus OTPLength={4} otpType="number" disabled={false} />
+				<div className={classes.error}>
+					{isInValidOTP && <span>Please enter correct OTP</span>}
+				</div>
 			</div>
 			<div className={classes["resend-otp-link"]} onClick={handleResendOtpHandler}>Resend OTP</div>
 			<div>

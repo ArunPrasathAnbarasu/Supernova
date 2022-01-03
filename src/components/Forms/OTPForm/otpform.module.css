@@ -26,9 +26,15 @@
 }
 
 .otp {
-	margin-left: 3rem;
+	margin-left: 1rem;
 }
 
+.error {
+	color: #dd0017;
+	text-align: center;
+	margin-top: 5px;
+	font-size: 14px;
+}
 .resend-otp-link {
 	color: #304ffe;
 	cursor: pointer;

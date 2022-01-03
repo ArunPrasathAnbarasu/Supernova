@@ -1,6 +1,7 @@
 import CloseIcon from '@mui/icons-material/Close';
 import { Button, InputAdornment, TextField, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
+import mockJson from "../../../mock.json";
 import classes from "./phonenumberform.module.css";
 
 const PhoneNumberForm = ({ setPhoneNumber, setShowOtpForm, onClose, phoneNumber }) => {
@@ -9,6 +10,7 @@ const PhoneNumberForm = ({ setPhoneNumber, setShowOtpForm, onClose, phoneNumber 
 	const [isError, setIsError] = useState(false);
 
 	useEffect(() => {
+		console.log(mockJson);
 		validatePhoneNumber(phoneNumber);
 	}, [])
 
@@ -34,7 +36,16 @@ const PhoneNumberForm = ({ setPhoneNumber, setShowOtpForm, onClose, phoneNumber 
 		}
 	}
 
+	const generateOTP = () => {
+		let OTP = mockJson.login[phoneNumber] ?? '';
+
+		if (OTP) {
+			window.sessionStorage.setItem("OTP", OTP)
+		}
+	}
+
 	const onSubmitFormHandler = () => {
+		generateOTP();
 		setShowOtpForm(true);
 	}
 
@@ -43,8 +54,8 @@ const PhoneNumberForm = ({ setPhoneNumber, setShowOtpForm, onClose, phoneNumber 
 			<div className={classes['modal-header']}>
 				<Typography id="modal-modal-title" variant="h6" component="h2">
 					<span><CloseIcon fontSize="medium" sx={{ marginBottom: '3px', mr: 2 }} onClick={onClose} /></span>
-							Please login to continue
-						</Typography>
+					Please login to continue
+				</Typography>
 			</div>
 			<div className={classes['modal-content']}>
 				<TextField
