@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import mockJson from "../../../mock.json";
 import classes from "./phonenumberform.module.css";
 
-const PhoneNumberForm = ({ setPhoneNumber, setShowOtpForm, onClose, phoneNumber }) => {
+const PhoneNumberForm = ({ setPhoneNumber, setShowOtpForm, setshowSignUpForm, onClose, phoneNumber }) => {
 	const [isPhoneNumberValid, setIsPhoneNumberValid] = useState(false);
 	const [helperText, setHelperText] = useState("");
 	const [isError, setIsError] = useState(false);
@@ -12,7 +12,7 @@ const PhoneNumberForm = ({ setPhoneNumber, setShowOtpForm, onClose, phoneNumber 
 	useEffect(() => {
 		console.log(mockJson);
 		validatePhoneNumber(phoneNumber);
-	}, [])
+	}, [phoneNumber])
 
 	const onChangeHandler = (event) => {
 		let value = event.target.value.trim();
@@ -21,7 +21,7 @@ const PhoneNumberForm = ({ setPhoneNumber, setShowOtpForm, onClose, phoneNumber 
 	}
 
 	const validatePhoneNumber = (phoneNumber) => {
-		if (phoneNumber.length == 10) {
+		if (phoneNumber.length === 10) {
 			setHelperText("");
 			setIsPhoneNumberValid(true);
 			setIsError(false);

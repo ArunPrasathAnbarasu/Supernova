@@ -57,3 +57,7 @@
 	align-items: center;
 	text-align: center;
 }
+
+.backarrow{
+	cursor: pointer;
+}

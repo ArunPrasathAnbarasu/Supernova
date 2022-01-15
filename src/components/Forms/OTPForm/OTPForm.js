@@ -48,7 +48,7 @@ const OTPForm = ({ phoneNumber, setShowOtpForm, closeAuthDrawer }) => {
 		<>
 			<div className={classes['modal-header']}>
 				<Typography id="modal-modal-title" variant="h6" component="h2">
-					<span>
+					<span className={classes['backarrow']}>
 						<ArrowBackIcon fontSize="medium" sx={{ marginBottom: '3px', mr: 2 }} onClick={onBackArrowOrEditClickHandler} />
 					</span>
 					Please login to continue
