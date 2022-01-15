@@ -5,3 +5,11 @@
 .close-icon {
     cursor: pointer;
 }
+
+.modal-content {
+	margin-top: 2rem;
+}
+
+.modal-primary-btn {
+	margin-top: 2rem;
+}

@@ -1,9 +1,79 @@
 import React from "react";
+import {useState,useEffect} from 'react'
 import CloseIcon from '@mui/icons-material/Close';
-import {  InputAdornment, TextField,Typography } from "@mui/material";
+import {  Button,InputAdornment, TextField,Typography } from "@mui/material";
 import classes from './signupform.module.css';
 
 const Signupform = ({onClose}) => {
+
+    const [values, setValues] = useState({
+        name: '',
+        phone: '',
+        email: '',
+    });
+
+    const [Err,setErr] = useState({
+        nameErr: false,
+        nameErrTxt: '',
+        phoneErr: false,
+        phoneErrTxt: ''
+    })
+
+    useEffect(() => {		
+        validateValues(values);
+	}, [values])
+
+    const onNameChange = (event) => {
+        //event.persist();
+        setValues((values)=>({
+            ...values,
+            name: event.target.value
+        }))
+    }
+
+    const onNumChange = (event) => {
+        //event.persist();
+        setValues((values)=>({
+            ...values,
+            phone: event.target.value
+        }))
+    }
+
+    const validateValues = (val) => {
+        if(val.name.length === 0){
+            setErr((Err)=>({
+                ...Err,
+                nameErr: true,
+                nameErrTxt: 'Please enter a name'
+            }))
+        }else {
+            setErr((Err)=>({
+                ...Err,
+                nameErr: false,
+                nameErrTxt: ''
+            }))      
+        }
+
+        if(val.phone.length > 10 || val.phone.length < 1){
+            setErr((Err)=>({
+                ...Err,
+                phoneErr: true,
+                phoneErrTxt: 'Please enter valid 10 digit phone number'
+            }))
+        }else {
+            setErr((Err)=>({
+                ...Err,
+                phoneErr: false,
+                phoneErrTxt: ''
+            }))
+        }
+    }
+
+    const onSubmitFormHandler = (event) => {
+        event.preventDefault();
+        
+    }
+
     return(
         <React.Fragment>
             <div>
@@ -13,22 +83,40 @@ const Signupform = ({onClose}) => {
 					SignUp here !
 				</Typography>
 			</div>
-            {/* <div className={classes['modal-content']}>
+            <form onSubmit={onSubmitFormHandler}>
+            <div className={classes['modal-content']}>
 				<TextField
 					fullWidth
 					size="normal"
+					error={Err.nameErr}
+					helperText={Err.nameErrTxt}
+					label="Full Name"
+					variant="outlined"
+					onChange={onNameChange}
+					value={values.name}
+				/>
+			</div>
+            <div className={classes['modal-content']}>
+				<TextField
+					fullWidth
+					size="normal"
+                    type='number'
 					InputProps={{
 						startAdornment: <InputAdornment position="start">+91</InputAdornment>,
 						length: "10"
 					}}
-					error={isError}
-					helperText={helperText}
-					label="Full Name"
+					error={Err.phoneErr}
+					helperText={Err.phoneErrTxt}
+					label="Phone Number"
 					variant="outlined"
-					onChange={onChangeHandler}
-					value={phoneNumber}
+					onChange={onNumChange}
+					value={values.phone}
 				/>
-			</div> */}
+			</div>
+            <div className={classes['modal-primary-btn']}>
+				<Button fullWidth size="large" disabled={Err.nameErr || Err.phoneErr} variant="contained" type="submit">Continue</Button>
+			</div>
+            </form>
             </div>
         </React.Fragment>
     );
