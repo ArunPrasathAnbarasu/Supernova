@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/Supernova/static/css/main.494d485b.css",
-    "main.js": "/Supernova/static/js/main.fec695dd.js",
+    "main.css": "/Supernova/static/css/main.b893e344.css",
+    "main.js": "/Supernova/static/js/main.de02d250.js",
     "static/js/787.fb3ccf8a.chunk.js": "/Supernova/static/js/787.fb3ccf8a.chunk.js",
     "static/media/experience2.jpeg": "/Supernova/static/media/experience2.d7f03bf7291d5010f83e.jpeg",
     "static/media/phones.png": "/Supernova/static/media/phones.a944911903db90c03f23.png",
     "static/media/experience1.jpeg": "/Supernova/static/media/experience1.5c7da3355c74086ee2b9.jpeg",
     "static/media/1.png": "/Supernova/static/media/1.d013195d39123b34403c.png",
     "index.html": "/Supernova/index.html",
-    "main.494d485b.css.map": "/Supernova/static/css/main.494d485b.css.map",
-    "main.fec695dd.js.map": "/Supernova/static/js/main.fec695dd.js.map",
+    "main.b893e344.css.map": "/Supernova/static/css/main.b893e344.css.map",
+    "main.de02d250.js.map": "/Supernova/static/js/main.de02d250.js.map",
     "787.fb3ccf8a.chunk.js.map": "/Supernova/static/js/787.fb3ccf8a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.494d485b.css",
-    "static/js/main.fec695dd.js"
+    "static/css/main.b893e344.css",
+    "static/js/main.de02d250.js"
   ]
 }
