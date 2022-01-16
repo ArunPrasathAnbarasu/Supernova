@@ -1,26 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import './content.css';
 import experience1 from '../Images/experience1.jpeg';
 import experience2 from '../Images/experience2.jpeg';
 import one from '../Images/1.png';
 import two from '../Images/1.png';
 import phones from '../Images/phones.png';
-
-
+import Chatbot from './ChatBot/chatBot'
 
 function Content() {
+    const [showChat, setShowChat] = useState(false)
+
+    const startChat = () => { setShowChat(true); }
+    const hideChat = () => { setShowChat(false); }
+
     return (
         <React.Fragment>
             <div>
                 {/* <!-- Navbar --> */}
-                <nav class="navbar navbar-expand-lg navbar-dark" style={{background: "black"}}>
+                <nav class="navbar navbar-expand-lg navbar-dark" style={{ background: "black" }}>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
                         aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <a class="navbar-brand" href="#"><img
                         src="https://res.cloudinary.com/urbanclap/image/upload/q_auto,f_auto,fl_progressive:steep/t_high_res_template,q_auto:low,f_auto/categories/category_v2/category_425cd8c0.png"
-                        alt="UrbanClap" style={{width: "200px"}}></img></a>
+                        alt="UrbanClap" style={{ width: "200px" }}></img></a>
                     <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                             <li class="nav-item active">
@@ -43,7 +47,7 @@ function Content() {
                 </nav>
 
                 {/* <!-- Carousel --> */}
-                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <div id="carouselExampleControls" class="carousel slide">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <img class="d-block w-100" src={experience1} alt="First slide"></img>
@@ -52,14 +56,6 @@ function Content() {
                             <img class="d-block w-100" src={experience2} alt="Second slide"></img>
                         </div>
                     </div>
-                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
                 </div>
 
                 {/* <!-- Experiences Section --> */}
@@ -74,21 +70,21 @@ function Content() {
                         </div>
                         <div class="row justify-content-center mt-4">
                             <div class="col-12 col-md-6">
-                                <img src={experience1} alt="Image" class="img-fluid"></img>
-                                    <h5 class="text-center mt-3 font-weight-bold">Salon at Home</h5>
-                                    <p class="text-center lighter-text">Single-use tools & products</p>
+                                <img src={experience1} alt="Image1" class="img-fluid"></img>
+                                <h5 class="text-center mt-3 font-weight-bold">Salon at Home</h5>
+                                <p class="text-center lighter-text">Single-use tools & products</p>
                             </div>
                             <div class="col-12 col-md-6">
-                                <img src={experience2} alt="Image" class="img-fluid"></img>
-                                    <h5 class="text-center mt-3 font-weight-bold">Salon at Home</h5>
-                                    <p class="text-center lighter-text">Single-use cape & towels</p>
+                                <img src={experience2} alt="Image2" class="img-fluid"></img>
+                                <h5 class="text-center mt-3 font-weight-bold">Salon at Home</h5>
+                                <p class="text-center lighter-text">Single-use cape & towels</p>
                             </div>
                         </div>
                     </div>
                 </section>
 
                 {/* <!-- Section Separate --> */}
-                <section style={{background: "#F1F4F6",height: "20px"}}></section>
+                <section style={{ background: "#F1F4F6", height: "20px" }}></section>
 
                 {/* <!-- Appliances Section --> */}
                 <section id="appliances">
@@ -103,31 +99,31 @@ function Content() {
                         <div class="row justify-content-center mt-4">
                             <div class="col-12 col-md-3">
                                 <img src="https://res.cloudinary.com/urbanclap/image/upload/q_auto,f_auto,fl_progressive:steep,w_532/t_high_res_category/categories/category_v2/category_ef2b79d0.png"
-                                    alt="Image" class="img-fluid"></img>
-                                    <p class="text-center mt-3">AC Service and Repair</p>
-                                    <p class="text-center lighter-text">30% off on Second AC onwards</p>
+                                    alt="Image3" class="img-fluid"></img>
+                                <p class="text-center mt-3">AC Service and Repair</p>
+                                <p class="text-center lighter-text">30% off on Second AC onwards</p>
                             </div>
                             <div class="col-12 col-md-3">
                                 <img src="https://res.cloudinary.com/urbanclap/image/upload/q_auto,f_auto,fl_progressive:steep,w_532/t_high_res_category/categories/category_v2/category_c0667020.png"
-                                    alt="Image" class="img-fluid"></img>
-                                    <p class="text-center mt-3">Geyser Service and Repair</p>
+                                    alt="Image4" class="img-fluid"></img>
+                                <p class="text-center mt-3">Geyser Service and Repair</p>
                             </div>
                             <div class="col-12 col-md-3">
                                 <img src="https://res.cloudinary.com/urbanclap/image/upload/q_auto,f_auto,fl_progressive:steep,w_532/t_high_res_category/categories/category_v2/category_bbb8c690.png"
-                                    alt="Image" class="img-fluid"></img>
-                                    <p class="text-center mt-3">RO or Water Purifier Repair</p>
+                                    alt="Image5" class="img-fluid"></img>
+                                <p class="text-center mt-3">RO or Water Purifier Repair</p>
                             </div>
                             <div class="col-12 col-md-3">
                                 <img src="https://res.cloudinary.com/urbanclap/image/upload/q_auto,f_auto,fl_progressive:steep,w_532/t_high_res_category/categories/category_v2/category_b78221c0.png"
-                                    alt="Image" class="img-fluid"></img>
-                                    <p class="text-center mt-3">Washing Machine Service & Repair</p>
+                                    alt="Image6" class="img-fluid"></img>
+                                <p class="text-center mt-3">Washing Machine Service & Repair</p>
                             </div>
                         </div>
                     </div>
                 </section>
 
                 {/* <!-- Section Separate --> */}
-                <section style={{background: "#F1F4F6",height: "20px"}}></section>
+                <section style={{ background: "#F1F4F6", height: "20px" }}></section>
 
                 {/* <!-- Reviews Section --> */}
                 <section id="reviews">
@@ -143,26 +139,26 @@ function Content() {
                         <div class="row justify-content-center mt-4">
                             <div class="col-12 col-md-3">
                                 <img src="https://res.cloudinary.com/urbanclap/image/upload/q_auto,f_auto,fl_progressive:steep,w_568/t_high_res_template/categories/category_v2/category_3782c0d0.png"
-                                    alt="Image" class="img-fluid"></img>
+                                    alt="Image7" class="img-fluid"></img>
                             </div>
                             <div class="col-12 col-md-3">
                                 <img src="https://res.cloudinary.com/urbanclap/image/upload/q_auto,f_auto,fl_progressive:steep,w_568/t_high_res_template/categories/category_v2/category_38337330.png"
-                                    alt="Image" class="img-fluid"></img>
+                                    alt="Image8" class="img-fluid"></img>
                             </div>
                             <div class="col-12 col-md-3">
                                 <img src="https://res.cloudinary.com/urbanclap/image/upload/q_auto,f_auto,fl_progressive:steep,w_568/t_high_res_template/categories/category_v2/category_387cb130.png"
-                                    alt="Image" class="img-fluid"></img>
+                                    alt="Image9" class="img-fluid"></img>
                             </div>
                             <div class="col-12 col-md-3">
                                 <img src="https://res.cloudinary.com/urbanclap/image/upload/q_auto,f_auto,fl_progressive:steep,w_568/t_high_res_template/categories/category_v2/category_3bbf0af0.png"
-                                    alt="Image" class="img-fluid"></img>
+                                    alt="Image10" class="img-fluid"></img>
                             </div>
                         </div>
                     </div>
                 </section>
 
                 {/* <!-- Section Separate --> */}
-                <section style={{background: "#F1F4F6",height: "20px"}}></section>
+                <section style={{ background: "#F1F4F6", height: "20px" }}></section>
 
                 {/* <!-- Cleaning Section --> */}
                 <section id="cleaning">
@@ -177,54 +173,54 @@ function Content() {
                         <div class="row justify-content-center mt-4">
                             <div class="col-12 col-md-3">
                                 <img src="https://res.cloudinary.com/urbanclap/image/upload/q_auto,f_auto,fl_progressive:steep,w_532/t_high_res_category/categories/category_v2/category_165bfd50.png"
-                                    alt="Image" class="img-fluid" style={{height:"150px"}}></img>
-                                    <p class="text-center mt-3">Professional Bathroom Cleaning</p>
+                                    alt="Image11" class="img-fluid" style={{ height: "150px" }}></img>
+                                <p class="text-center mt-3">Professional Bathroom Cleaning</p>
                             </div>
                             <div class="col-12 col-md-3">
                                 <img src="https://res.cloudinary.com/urbanclap/image/upload/q_auto,f_auto,fl_progressive:steep,w_532/t_high_res_category/categories/category_v2/category_e06f0000.jpeg"
-                                    alt="Image" class="img-fluid" style={{height:"150px"}}></img>
-                                    <p class="text-center mt-3">Car Cleaning</p>
+                                    alt="Image12" class="img-fluid" style={{ height: "150px" }}></img>
+                                <p class="text-center mt-3">Car Cleaning</p>
                             </div>
                             <div class="col-12 col-md-3">
                                 <img src="https://res.cloudinary.com/urbanclap/image/upload/q_auto,f_auto,fl_progressive:steep,w_532/t_high_res_category/categories/category_v2/category_2effaaf0.png"
-                                    alt="Image" class="img-fluid" style={{height:"150px"}}></img>
-                                    <p class="text-center mt-3">Professional Sofa Cleaning</p>
+                                    alt="Image13" class="img-fluid" style={{ height: "150px" }}></img>
+                                <p class="text-center mt-3">Professional Sofa Cleaning</p>
                             </div>
                             <div class="col-12 col-md-3">
                                 <img src="https://res.cloudinary.com/urbanclap/image/upload/q_auto,f_auto,fl_progressive:steep,w_532/t_high_res_category/categories/category_v2/category_5cadb240.jpeg"
-                                    alt="Image" class="img-fluid" style={{height:"150px"}}></img>
-                                    <p class="text-center mt-3">Pest Control</p>
+                                    alt="Image14" class="img-fluid" style={{ height: "150px" }}></img>
+                                <p class="text-center mt-3">Pest Control</p>
                             </div>
                         </div>
                     </div>
                 </section>
 
                 {/* <!-- Section Separate --> */}
-                <section style={{background: "#F1F4F6",height: "20px"}}></section>
+                <section style={{ background: "#F1F4F6", height: "20px" }}></section>
 
                 {/* <!-- Insurance Section --> */}
                 <section id="insurance">
                     <div class="container-fluid p-2">
                         <div class="row justify-content-center">
-                            <img src={one} alt="Image" class="img-fluid" style={{width: "100%"}}></img>
+                            <img src={one} alt="Image15" class="img-fluid" style={{ width: "100%" }}></img>
                         </div>
                     </div>
                 </section>
 
                 {/* <!-- Section Separate --> */}
-                <section style={{background: "#F1F4F6",height: "20px"}}></section>
+                <section style={{ background: "#F1F4F6", height: "20px" }}></section>
 
                 {/* <!-- Government Section --> */}
                 <section id="government">
                     <div class="container-fluid p-2">
                         <div class="row justify-content-center">
-                            <img src={two} alt="Image" class="img-fluid" style={{width: "100%"}}></img>
+                            <img src={two} alt="Image16" class="img-fluid" style={{ width: "100%" }}></img>
                         </div>
                     </div>
                 </section>
 
                 {/* <!-- Section Separate --> */}
-                <section style={{background: "#F1F4F6",height: "20px"}}></section>
+                <section style={{ background: "#F1F4F6", height: "20px" }}></section>
 
                 {/* <!-- Refer Section --> */}
                 <section id="refer">
@@ -242,7 +238,7 @@ function Content() {
                                 <div class="row justify-content-start">
                                     <div class="buttonIn">
                                         <input type="number" id="referralForm" class="form-control" placeholder="9994708434"></input>
-                                            <button id="submitRefer" class="btn btn-black">Send</button>
+                                        <button id="submitRefer" class="btn btn-black">Send</button>
                                     </div>
                                 </div>
                                 <div class="row justify-content-start mt-5">
@@ -250,17 +246,17 @@ function Content() {
                                         <a
                                             href="https://app.appsflyer.com/com.urbanclap.urbanclap?pid=MobileWeb&c=home_app_buttons"><img
                                                 src="https://images.urbanclap.com/image/upload/categories/category_v2/category_7f907eb0.png"
-                                                alt="Image" class="img-fluid" style={{height: "50px"}}></img></a>
+                                                alt="Image17" class="img-fluid" style={{ height: "50px" }}></img></a>
                                     </div>
                                     <div class="col-12 col-md-4">
                                         <a href="https://app.appsflyer.com/id1032480595?pid=MobileWeb&c=home_app_buttons"><img
                                             src="https://images.urbanclap.com/image/upload/categories/category_v2/category_7f741d10.png"
-                                            alt="Image" class="img-fluid" style={{height: "50px"}}></img></a>
+                                            alt="Image18" class="img-fluid" style={{ height: "50px" }}></img></a>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-12 col-md-6">
-                                <img src={phones} alt="Image" class="img-fluid"></img>
+                                <img src={phones} alt="Image19" class="img-fluid"></img>
                             </div>
                         </div>
                     </div>
@@ -268,18 +264,18 @@ function Content() {
 
                 {/* <!-- Footer --> */}
                 <footer class="site-footer">
-                    <div class="container" style={{overflowX: "hidden"}}>
+                    <div class="container" style={{ overflowX: "hidden" }}>
                         <div class="row">
                             <div class="col-12 col-md-12">
                                 <img src="https://res.cloudinary.com/urbanclap/image/upload/q_auto,f_auto,fl_progressive:steep/t_high_res_template,q_auto:low,f_auto/categories/category_v2/category_425cd8c0.png"
-                                    class="img-fluid" alt="UrbanClap" style={{width: "250px"}}></img>
-                                    <p class="text-justify mt-3">Lorem Ipsum. Proin gravida
-                                        nibh vel velit auctor aliquet. Aenean
-                                        sollicitudin, lorem quis bibendum nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis
-                                        sed odio sit amet nibh vulputate cursus a sit amet mauris orbi accumsan.Lorem Ipsum. Proin
-                                        gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum nisi elit
-                                        consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a
-                                        sit amet mauris orbi accumsan.</p>
+                                    class="img-fluid" alt="UrbanClap" style={{ width: "250px" }}></img>
+                                <p class="text-justify mt-3">Lorem Ipsum. Proin gravida
+                                    nibh vel velit auctor aliquet. Aenean
+                                    sollicitudin, lorem quis bibendum nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis
+                                    sed odio sit amet nibh vulputate cursus a sit amet mauris orbi accumsan.Lorem Ipsum. Proin
+                                    gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum nisi elit
+                                    consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a
+                                    sit amet mauris orbi accumsan.</p>
                             </div>
                             <div class="col-12 col-md-3">
                                 <h6>Candidates</h6>
@@ -339,6 +335,22 @@ function Content() {
                         </div>
                     </div>
                 </footer>
+
+                {/* <!-- ChatBot --> */}
+                <div style={{ display: showChat ? "" : "none" }}>
+                    <Chatbot setShowChat={setShowChat}></Chatbot>
+                </div>
+
+                {/* <!-- Chatbot Handler --> */}
+                {!showChat
+                    ? <div className="chatbotBtn" onClick={() => startChat()}>
+                        <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg>
+                    </div>
+                    : <div className="chatbotBtnHidden" onClick={() => hideChat()}>
+                        <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg>
+                    </div>
+                }
+
             </div>
         </React.Fragment>
     )

@@ -1,0 +1,13 @@
+.container {
+    position: fixed;
+    right: 12px;
+    bottom: 12px;
+}
+
+.closeIcon {
+    position: absolute;
+    top: 12px;
+    z-index: 99999999;
+    right: 12px;
+    cursor: pointer;
+}
